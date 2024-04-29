@@ -40,6 +40,34 @@ def zobraz_ucet():
     return render_template("ucet.html", username=username)
 
 
+@app.route('/registrace', methods=["GET", "POST"])
+def registrace():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        with open("static/data/users.json", "r") as file:
+            uzivatele = json.load(file)
+
+        for u in uzivatele:
+            if u["username"] == username:
+                return render_template("Registrace.html", error="Uživatelské jméno již existuje.")
+
+        novy_uzivatel = {
+            "username": username,
+            "password": password,
+            "color": "black"
+        }
+
+        zapis_do_json("users", novy_uzivatel)
+
+        session["username"] = username
+        return redirect(url_for("prihlasit"))
+
+    return render_template("Registrace.html")
+
+
+
 
 
 
