@@ -12,7 +12,20 @@ def precti_json(nazev_souboru):
     except FileNotFoundError:
         return {}
 
+def zapis_do_json(nazev_souboru, data_na_zapis):
+    if not os.path.exists("static/data"):
+        os.makedirs("static/data")
 
+    try:
+        with open(f"static/data/{nazev_souboru}.json", "r") as file:
+            uzivatele = json.load(file)
+    except FileNotFoundError:
+        uzivatele = []
+
+    uzivatele.append(data_na_zapis)
+
+    with open(f"static/data/{nazev_souboru}.json", "w", encoding="utf-8") as file:
+        json.dump(uzivatele, file)
 
 
 
