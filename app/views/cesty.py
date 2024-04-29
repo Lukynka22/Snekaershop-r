@@ -18,6 +18,15 @@ def tenisky():
 def prihlasit():
     return render_template("Přihlásit se.html")
 
+@app.route("/O nás.html")
+def onas():
+    return render_template("O nás.html")
+
+
+@app.route("/web.html")
+def web():
+    return render_template("web.html")
+
 
 
 
