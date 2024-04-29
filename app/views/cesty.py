@@ -28,6 +28,26 @@ def zapis_do_json(nazev_souboru, data_na_zapis):
         json.dump(uzivatele, file)
 
 
+@app.route('/zobraz-ucet')
+def zobraz_ucet():
+    username = session.get("username")
+    color = request.cookies.get("color")
+    if not color:
+        color = "black"
+        res = make_response(render_template("ucet.html", username=username))
+        res.set_cookie("color", color)
+        return res
+    return render_template("ucet.html", username=username)
+
+
+
+
+
+
+
+
+
+
 
 
 
