@@ -5,6 +5,19 @@ import json
 from flask import jsonify
 
 
+def precti_json(nazev_souboru):
+    try:
+        with open(f"static/data/{nazev_souboru}.json", "r") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {}
+
+
+
+
+
+
+
 
 @app.route("/")
 def zakladni():
