@@ -14,7 +14,9 @@ def zakladni():
 def tenisky():
     return render_template("Tenisky.html")
 
-
+@app.route("/Přihlásit se.html")
+def prihlasit():
+    return render_template("Přihlásit se.html")
 
 
 
