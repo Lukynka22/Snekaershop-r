@@ -67,6 +67,21 @@ def registrace():
     return render_template("Registrace.html")
 
 
+@app.route("/zpracuj-prihlaseni", methods=["POST"])
+def zpracuj_prihlaseni():
+    username = request.form.get("username")
+    password = request.form.get("password")
+
+    with open("static/data/users.json", "r") as file:
+        uzivatele = json.load(file)
+
+    for u in uzivatele:
+        if u["username"] == username and u["password"] == password:
+            session["username"] = username
+            return redirect(url_for("zobraz_ucet"))
+    return render_template("Přihlásit se.html", error="Neplatné přihlašovací údaje.")
+
+
 
 
 
