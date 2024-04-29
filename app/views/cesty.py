@@ -10,6 +10,10 @@ from flask import jsonify
 def zakladni():
     return render_template("web.html")
 
+@app.route("/Tenisky.html")
+def tenisky():
+    return render_template("Tenisky.html")
+
 
 
 
