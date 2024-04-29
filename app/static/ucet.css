@@ -1,0 +1,20 @@
+body {
+    background-image: url('https://i.postimg.cc/bJdgp3Cp/nike-sign-sportbuzzbusiness-fr.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.centr{
+    text-align: center;
+}
+
+h9 {
+    font-size: 24px;
+    font-weight: bold;
+}
+h10 {
+    font-size: 23px;
+    font-weight: bold;
+}
+
