@@ -28,6 +28,9 @@ def web():
     return render_template("web.html")
 
 
+@app.route("/Kontakty.html")
+def kontakty():
+    return render_template("Kontakty.html")
 
 
 
