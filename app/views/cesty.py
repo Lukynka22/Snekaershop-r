@@ -128,3 +128,17 @@ class PaymentGateway:
     @staticmethod
     def process_payment(credit_card_number, amount):
         return True
+
+@app.route('/payment_form', methods=['GET', 'POST'])
+def payment_form():
+    if request.method == 'POST':
+        credit_card_number = request.form['credit_card_number']
+        amount = float(request.form['amount'])
+
+        if PaymentGateway.process_payment(credit_card_number, amount):
+            session['payment_success'] = True
+            return redirect(url_for('payment_success'))
+        else:
+            return render_template('payment_failed.html')
+
+    return render_template('payment_form.html')
