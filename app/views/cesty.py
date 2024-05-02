@@ -82,19 +82,6 @@ def zpracuj_prihlaseni():
     return render_template("Přihlásit se.html", error="Neplatné přihlašovací údaje.")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route("/")
 def zakladni():
     return render_template("web.html")
@@ -136,3 +123,8 @@ def cesta():
     }
 
     return jsonify(objekt)
+
+class PaymentGateway:
+    @staticmethod
+    def process_payment(credit_card_number, amount):
+        return True
