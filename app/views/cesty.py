@@ -129,6 +129,7 @@ class PaymentGateway:
     def process_payment(credit_card_number, amount):
         return True
 
+
 @app.route('/payment_form', methods=['GET', 'POST'])
 def payment_form():
     if request.method == 'POST':
@@ -142,3 +143,12 @@ def payment_form():
             return render_template('payment_failed.html')
 
     return render_template('payment_form.html')
+
+
+@app.route('/payment_success')
+def payment_success():
+    if 'payment_success' in session:
+        session.pop('payment_success')
+        return render_template('payment_success.html')
+    else:
+        return redirect(url_for('payment_form'))
