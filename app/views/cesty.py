@@ -84,7 +84,14 @@ def zpracuj_prihlaseni():
 
 
 
-
+@app.route("/Odhlášení")
+def odhlaseni():
+    #pokud je uživatel přihlášen, získá se  jeho uživatelské jméno
+    if "username" in session:
+        username = session["username"]
+    #odstranění uživatele ze session
+    session.pop("username", None)
+    return redirect(url_for("web"))
 
 
 @app.route("/")
