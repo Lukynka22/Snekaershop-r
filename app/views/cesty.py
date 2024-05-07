@@ -89,6 +89,18 @@ def smazani():
             users = json.load(file)
 
 
+        for user in users:
+            if session["username"] == user["username"]:
+                users.remove(user)
+                break
+
+
+        with open("static/data/users.json", "w", encoding="utf-8") as file:
+            json.dump(users, file)
+
+
+        session.pop("username")
+
 
 
 
