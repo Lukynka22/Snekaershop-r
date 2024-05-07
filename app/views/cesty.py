@@ -82,6 +82,18 @@ def zpracuj_prihlaseni():
     return render_template("Přihlásit se.html", error="Neplatné přihlašovací údaje.")
 
 
+
+@app.route("/Odhlášení")
+def odhlaseni():
+    #pokud je uživatel přihlášen, získá se  jeho uživatelské jméno
+    if "username" in session:
+        username = session["username"]
+    #odstranění uživatele ze session
+    session.pop("username", None)
+    return redirect(url_for("web"))
+
+
+
 @app.route("/")
 def zakladni():
     return render_template("web.html")
