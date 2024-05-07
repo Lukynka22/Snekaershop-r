@@ -81,6 +81,14 @@ def zpracuj_prihlaseni():
             return redirect(url_for("zobraz_ucet"))
     return render_template("Přihlásit se.html", error="Neplatné přihlašovací údaje.")
 
+@app.route("/smazani", methods=["GET", "POST"])
+def smazani():
+    if "username" in session:
+        # Načtení uživatelů ze souboru users.json
+        with open("static/data/users.json", "r") as file:
+            users = json.load(file)
+
+
 
 
 
