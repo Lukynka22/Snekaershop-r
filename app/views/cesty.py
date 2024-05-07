@@ -101,6 +101,12 @@ def smazani():
 
         session.pop("username")
 
+        response = redirect(url_for("web"))
+        response.delete_cookie("username")
+        return response
+    else:
+        return redirect(url_for("web"))
+
 
 
 
