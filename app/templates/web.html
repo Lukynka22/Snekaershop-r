@@ -146,7 +146,21 @@
                             <option value="red">red
                                 <option value="white">white</option>
 </select>&nbsp;&nbsp;Text Color
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif%}
+{% endwith %}
+
+
+
+
         
+    <script src="{{ url_for('static', filename='slide.js') }}"></script>
+     
         
         
     </body>
