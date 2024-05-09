@@ -278,7 +278,7 @@ left: 83%;
   width: 80%; /* Šířka obrázku */
   height: auto;
 }
-.text {
+.tex6t {
   flex: 1; /* Flexibilní růst pro text (zabírá zbytek prostoru) */
   padding: 100px; /* Volitelné: mezera mezi obrázkem a textem */
   font-size: 18px; /* Velikost textu */
