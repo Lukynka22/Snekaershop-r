@@ -151,6 +151,11 @@ def kosik():
     return render_template("kosik.html")
 
 
+@app.route("/payment_form.html")
+def payment():
+    return render_template("payment_form.html")
+
+
 @app.route("/cesta")
 def cesta():
     objekt = {
