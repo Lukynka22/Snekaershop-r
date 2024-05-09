@@ -146,6 +146,9 @@ def web():
 def kontakty():
     return render_template("Kontakty.html")
 
+@app.route("/kosik.html")
+def kosik():
+    return render_template("kosik.html")
 
 
 @app.route("/cesta")
