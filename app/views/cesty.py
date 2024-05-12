@@ -204,3 +204,11 @@ def zpracuj_email():
     email = request.form.get("email")
 
     return redirect(url_for("web"))
+
+
+@app.route('/Jordany.html')
+def jordany():
+    return render_template('Jordany.html')
+
+
+
