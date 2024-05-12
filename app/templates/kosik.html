@@ -1,10 +1,84 @@
+
+
+    <html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sneakersgallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body>
+
+ <body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+        <a href="web.html" class="logo">KLT</a>
+        <nav>
+            <ul>
+
+                <li><a href="web.html">Domu</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Tenisky.html"> Tenisky</a></button>
+                    <div class="dropdown-content">
+                    <a href="Jordany.html">Jordan</a>
+                    <a href="Dunk.html">Dunk</a>
+                    <a href="Ostatní.html">Ostatní</a>
+                    </div>
+                  </div>
+                <li><a href="Kontakty.html">Kontakty</a></li>
+                <li><a href="O nás.html">O nás</a></li>
+                <li><a href="Přihlásit se.html" class="cta">Přihlásit se</a></li>
+                <li><a href="kosik.html"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Košík</title>
 </head>
 <body>
-<h1> zde je kosik </h1>
+    <h1>Košík</h1>
+    <div id="cart"></div>
+
+
+
+        <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        let cartContainer = document.getElementById("cart");
+        cart.forEach(function(product, index) {
+            let productElement = document.createElement("div");
+            productElement.innerHTML = `
+                <h3>${product.name}</h3>
+                <p>Cena: $${product.price}</p>
+                <img src="${product.imageUrl}" alt="${product.name}" style="width: 100px;">
+                <button onclick="removeFromCart(${index})">Odstranit</button>
+                <a href="/payment_form"><button>Platba</button></a>
+            `;
+            cartContainer.appendChild(productElement);
+        });
+
+    </script>
 </body>
 </html>
