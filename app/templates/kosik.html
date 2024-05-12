@@ -78,7 +78,12 @@
             `;
             cartContainer.appendChild(productElement);
         });
-
+            
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            location.reload();
+        }
     </script>
 </body>
 </html>
