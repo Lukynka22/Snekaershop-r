@@ -4,9 +4,11 @@ showSlides(slideIndex);
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
+
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
+
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
@@ -23,4 +25,17 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-console.log("ahoj")
+let slideTimer = setInterval(function() {
+  plusSlides(1);
+}, 3000);
+
+document.addEventListener("mouseover", function() {
+  clearInterval(slideTimer);
+});
+
+
+document.addEventListener("mouseout", function() {
+  slideTimer = setInterval(function() {
+    plusSlides(1);
+  }, 3000);
+});
