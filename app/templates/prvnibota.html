@@ -71,7 +71,28 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 
+<script>
+        function addToCart() {
+            let productName = "Lorem ipsum";
+            let price = 10;
+            let imageUrl = "https://raffle.ballzy.eu/storage/product_images/BQ6472_015_1.jpg";
 
+            let product = {
+                name: productName,
+                price: price,
+                imageUrl: imageUrl
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push(product);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produkt byl přidán do košíku!");
+        }
+    </script>
+</div>
 
 </body>
 </html>
