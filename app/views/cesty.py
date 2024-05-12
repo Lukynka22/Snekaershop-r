@@ -217,3 +217,7 @@ def Dunk():
 @app.route('/Ostatní.html')
 def Ostatní():
     return render_template('Ostatní.html')
+
+@app.route('/prvnibota.html')
+def prvnibota():
+    return render_template('prvnibota.html')
