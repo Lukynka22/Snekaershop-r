@@ -210,5 +210,7 @@ def zpracuj_email():
 def jordany():
     return render_template('Jordany.html')
 
-
+@app.route('/Dunk.html')
+def Dunk():
+    return render_template('Dunk.html')
 
