@@ -214,3 +214,6 @@ def jordany():
 def Dunk():
     return render_template('Dunk.html')
 
+@app.route('/Ostatní.html')
+def Ostatní():
+    return render_template('Ostatní.html')
