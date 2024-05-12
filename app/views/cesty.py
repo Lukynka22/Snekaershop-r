@@ -225,3 +225,7 @@ def prvnibota():
 @app.route('/druhabota.html')
 def druhabota():
     return render_template('druhabota.html')
+
+@app.route('/tretibota.html')
+def tretibota():
+    return render_template('tretibota.html')
