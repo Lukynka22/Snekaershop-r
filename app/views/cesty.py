@@ -122,7 +122,7 @@ def odhlaseni():
 
 @app.route("/")
 def zakladni():
-    return render_template("web.html")
+    return render_template("webn.html")
 
 @app.route("/Tenisky.html")
 def tenisky():
