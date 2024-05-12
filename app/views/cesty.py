@@ -221,3 +221,7 @@ def Ostatní():
 @app.route('/prvnibota.html')
 def prvnibota():
     return render_template('prvnibota.html')
+
+@app.route('/druhabota.html')
+def druhabota():
+    return render_template('druhabota.html')
