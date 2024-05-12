@@ -71,7 +71,27 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 
+<script>
+        function addToCart() {
+            let productName = "Lorem ipsum";
+            let price = 10;
+            let imageUrl = "https://img.buzzfeed.com/buzzfeed-static/complex/images/tfszqbi7t3gq8if8iusy/jordan-1-mid-chicago-toe.jpg?output-format=jpg&output-quality=auto";
 
+            let product = {
+                name: productName,
+                price: price,
+                imageUrl: imageUrl
+            };
+
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push(product);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Produkt byl přidán do košíku!");
+        }
+    </script>
 
 </body>
 </html>
