@@ -1,0 +1,193 @@
+<html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sneakersgallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body>
+
+ <body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+        <a href="web.html" class="logo">KLT</a>
+        <nav>
+            <ul>
+
+                <li><a href="web.html">Domu</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="Tenisky.html"> Tenisky</a></button>
+                    <div class="dropdown-content">
+                    <a href="Jordany.html">Jordan</a>
+                    <a href="Dunk.html">Dunk</a>
+                    <a href="Ostatní.html">Ostatní</a>
+                    </div>
+                  </div>
+                <li><a href="Kontakty.html">Kontakty</a></li>
+                <li><a href="O nás.html">O nás</a></li>
+                <li><a href="Přihlásit se.html" class="cta">Přihlásit se</a></li>
+                <li><a href="kosik.html"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+</div>
+
+
+         <div class="slideshow-container">
+
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="https://raffle.ballzy.eu/storage/product_images/BQ6472_015_1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="https://img.buzzfeed.com/buzzfeed-static/complex/images/tfszqbi7t3gq8if8iusy/jordan-1-mid-chicago-toe.jpg?output-format=jpg&output-quality=auto" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="https://i.postimg.cc/x8DSfk8Y/sss.jpg" style="width:100%">
+  </div>
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+
+<div class="container">
+    <a class="prvnibota" href="./prvnibota.html">
+        <div class="centered-image">
+            <img class="image" src="https://raffle.ballzy.eu/storage/product_images/BQ6472_015_1.jpg" alt="Bota" />
+        </div>
+    </a>
+    <div class="tex6t">Lukáš je mega borec a jde mu vše</div><br>
+    <button class="prejit"><a href="prvnibota.html" class="barva3"> Přejit na tenisku</a></button>
+
+</div>
+
+<div class="container">
+    <a class="druhabota" href="./druhabota.html">
+        <div class="centered-image">
+            <img class="image" src="https://img.buzzfeed.com/buzzfeed-static/complex/images/tfszqbi7t3gq8if8iusy/jordan-1-mid-chicago-toe.jpg?output-format=jpg&output-quality=auto" alt="Bota" />
+        </div>
+    </a>
+    <div class="tex6t">Lukáš je mega borec a jde mu vše</div><br>
+    <button class="prejit"><a href="druhabota.html" class="barva2"> Přejit na tenisku</a></button>
+</div>
+
+<div class="container">
+    <a class="tretibota" href="./tretibota.html">
+        <div class="centered-image">
+            <img class="image" src="https://i.postimg.cc/x8DSfk8Y/sss.jpg" alt="Bota" />
+        </div>
+    </a>
+    <div class="textt">Air Jordan 1 jsou legendární tenisky, které byly poprvé uvedeny na trh v roce 1985 pro basketbalového hráče Michaela Jordana. Jsou to první tenisky ze série Air Jordan, která je dnes jednou z nejuznávanějších a nejpopulárnějších kolekcí sportovní obuvi na světě</div><br>
+    <button class="prejit"><a href="tretibota.html" class="barva1"> Přejit na tenisku</a></button>
+</div>
+
+
+
+        <select name="clr" onchange="document.bgColor=this.options[this.selectedIndex].value" size="1">
+    <br>
+    <option value="black">black
+        <option value="orange">orange
+            <option value="flamingred">fuschia
+                <option value="lightyellow">light yellow
+                    <option value="green">green
+                        <option value="cyan">cyan
+                            <option value="yellow">yellow
+                                <option value="red">red
+                                    <option value="white">white</option>
+</select>&nbsp;&nbsp;Background Color
+
+<br>
+<select name="clr" onchange="document.fgColor=this.options[this.selectedIndex].value" size="1">
+    <br>
+    <option value="black">black
+        <option value="orange">orange
+            <option value="flamingred">fuschia
+                <option value="lightyellow">light yellow
+                    <option value="cyan">cyan
+                        <option value="yellow">yellow
+                            <option value="red">red
+                                <option value="white">white</option>
+</select>&nbsp;&nbsp;Text Color
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif%}
+{% endwith %}
+
+    <div id="emailPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.5); z-index: 9999;">
+        <h3>Zadejte svůj e-mail
+        pro získaní slevy 5%</h3>
+        <form action="{{ url_for('zpracuj_email') }}" method="post">
+            <input type="email" name="email" required>
+            <button type="submit">Odeslat</button>
+        </form>
+    </div>
+
+    <!-- Skript pro zobrazení vyskakovacího okna -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Zobrazit vyskakovací okno
+            document.getElementById('emailPopup').style.display = 'block';
+        });
+    </script>
+
+
+
+    <script src="{{ url_for('static', filename='slide.js') }}"></script>
+
+
+
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
