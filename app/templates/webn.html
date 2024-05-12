@@ -156,30 +156,27 @@
     {% endif%}
 {% endwith %}
 
-    <div id="emailPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.5); z-index: 9999;">
+   <div id="emailPopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.5); z-index: 9999;">
         <h3>Zadejte svůj e-mail
         pro získaní slevy 5%</h3>
         <form action="{{ url_for('zpracuj_email') }}" method="post">
             <input type="email" name="email" required>
             <button type="submit">Odeslat</button>
+            <button id="closeButton">Zavřít</button>
         </form>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('emailPopup').style.display = 'block';
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        document.getElementById('emailPopup').style.display = 'block';
+
+    
+        document.getElementById('closeButton').addEventListener('click', function() {
+            document.getElementById('emailPopup').style.display = 'none';
         });
-    </script>
-
-
-
-    <script src="{{ url_for('static', filename='slide.js') }}"></script>
-
-
-
-    </body>
-    </html>
-
+    });
+</script>
 
 
 
