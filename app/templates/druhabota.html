@@ -6,12 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>sneakersgallery</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
-    <body> 
+    <body>
 
 
-<body> 
+<body>
 
     <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <header>
+        <header>
         <a href="web.html" class="logo">KLT</a>
         <nav>
             <ul>
@@ -40,11 +40,38 @@
                 <li><a href="Kontakty.html">Kontakty</a></li>
                 <li><a href="O nás.html">O nás</a></li>
                 <li><a href="Přihlásit se.html" class="cta">Přihlásit se</a></li>
+                <li><a href="kosik.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</body>
+</html>
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+</div>
+
+
+    <div class="container">
+    <a class="prvnibota" href="./prvnibota.html">
+        <div class="centered-image">
+            <img class="image" src="https://img.buzzfeed.com/buzzfeed-static/complex/images/tfszqbi7t3gq8if8iusy/jordan-1-mid-chicago-toe.jpg?output-format=jpg&output-quality=auto" alt="Bota" />
+        </div>
+    </a>
+
+
+    <div id="product">
+        <h2>Produkt</h2>
+        <p>Název produktu: Lorem ipsum</p>
+        <p>Cena: $10</p>
+        <button onclick="addToCart()">Přidat do košíku</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+
 </body>
 </html>
