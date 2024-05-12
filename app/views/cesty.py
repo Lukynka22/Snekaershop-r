@@ -198,3 +198,9 @@ def payment_success():
         return render_template('payment_success.html')
     else:
         return redirect(url_for('payment_form'))
+
+@app.route('/zpracuj-email', methods=["POST"])
+def zpracuj_email():
+    email = request.form.get("email")
+
+    return redirect(url_for("web"))
