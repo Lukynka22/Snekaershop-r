@@ -426,4 +426,18 @@ nav ul li {
     display: inline;
 }
 
+nav ul li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+    transform: scale(1.1);
+}
 
