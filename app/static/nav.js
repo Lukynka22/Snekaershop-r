@@ -7,3 +7,11 @@ document.addEventListener('DOMContentLoaded', function () {
             menuItem.style.color = 'black';
             menuItem.style.transform = 'scale(1.1)';
         });
+
+                menuItem.addEventListener('mouseout', function () {
+            menuItem.style.backgroundColor = '';
+            menuItem.style.color = '';
+            menuItem.style.transform = '';
+        });
+    });
+});
