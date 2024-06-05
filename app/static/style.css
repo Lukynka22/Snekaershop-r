@@ -471,3 +471,21 @@ nav ul li a:hover {
     line-height: 1.5;
     color: #333;
     }
+.prejit {
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+.prejit:hover {
+    background-color: red;
+    }
