@@ -5,3 +5,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (currentTheme) {
         document.body.classList.add(currentTheme);
     }
+
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        let theme = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
+    });
+});
