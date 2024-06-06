@@ -489,3 +489,20 @@ nav ul li a:hover {
 .prejit:hover {
     background-color: red;
     }
+
+
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+button {
+    margin: 20px;
+    padding: 10px;
+}
