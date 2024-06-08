@@ -16,6 +16,12 @@ def rate():
             flash('Vyplňte prosím username a hodnocení')
             return redirect(url_for('rate'))
 
+        rating_data = {
+            'username': username,
+            'rating': rating,
+            'comments': comments
+        }
+
 
 
 
