@@ -5,6 +5,20 @@ import json
 from flask import jsonify
 
 
+@app.route('/rate', methods=['GET', 'POST'])
+def rate():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        rating = request.form.get('rating')
+        comments = request.form.get('comments')
+
+
+
+
+
+
+
+
 def precti_json(nazev_souboru):
     try:
         with open(f"static/data/{nazev_souboru}.json", "r") as file:
