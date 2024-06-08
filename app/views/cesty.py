@@ -11,6 +11,11 @@ def rate():
         username = request.form.get('username')
         rating = request.form.get('rating')
         comments = request.form.get('comments')
+        
+        if not username or not rating:
+            flash('Vyplňte prosím username a hodnocení')
+            return redirect(url_for('rate'))
+
 
 
 
