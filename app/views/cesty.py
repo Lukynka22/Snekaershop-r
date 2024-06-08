@@ -30,6 +30,8 @@ def rate():
         else:
             ratings = []
 
+        ratings.append(rating_data)
+
 
 
 
