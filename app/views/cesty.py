@@ -31,7 +31,13 @@ def rate():
             ratings = []
 
         ratings.append(rating_data)
+        
+        with open(ratings_file, 'w') as file:
+            json.dump(ratings, file, indent=4)
 
+        flash('Thank you for your feedback!')
+        return render_template('web.html')
+    return render_template('rate.html')
 
 
 
