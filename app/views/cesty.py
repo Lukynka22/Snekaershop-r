@@ -23,6 +23,14 @@ def rate():
         }
 
 
+        ratings_file = 'static/data/ratings.json'
+        if os.path.exists(ratings_file):
+            with open(ratings_file, 'r') as file:
+                ratings = json.load(file)
+        else:
+            ratings = []
+
+
 
 
 
