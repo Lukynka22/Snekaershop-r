@@ -513,3 +513,8 @@ button {
     color: white;
     padding: 10px;
 }
+.buttonstyl{
+display: flex;
+gap: 10px;
+
+}
