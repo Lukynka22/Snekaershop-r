@@ -271,3 +271,7 @@ def druhabota():
 @app.route('/tretibota.html')
 def tretibota():
     return render_template('tretibota.html')
+
+@app.route('/minihra')
+def mini_game():
+    return render_template('minihra.html')
