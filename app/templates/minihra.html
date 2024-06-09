@@ -78,6 +78,22 @@
     checkCollision();
   }
 
+    function checkCollision() {
+    console.log('Checking collision...');
+    fabrics.forEach((fabric) => {
+      if (isColliding(shoe, fabric)) {
+        score++;
+        fabric.remove();
+        fabrics = fabrics.filter((f) => f!== fabric);
+        document.getElementById('score-display').textContent = `Score: ${score}`;
+        if (score === 10) {
+          coupon = true;
+          alert('Gratulujeme! Získali jste dárkový kupon!');
+        }
+      }
+    });
+  }
+
     
     
 </script>
