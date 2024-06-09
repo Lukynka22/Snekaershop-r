@@ -25,7 +25,12 @@
         <label for="comments">Comments:</label><br>
         <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
         
-        <input type="submit" value="Submit">
+        <div class="buttonstyl">
+            <input type="submit" value="Submit">
+            <a href="{{ url_for('web') }}">
+                <button type="button">Hlavní stránka</button>
+            </a>
+        </div>
     </form>
 
 </body>
