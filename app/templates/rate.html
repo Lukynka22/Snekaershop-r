@@ -5,6 +5,15 @@
     <title>Rate Us</title>
 </head>
 <body>
+        {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
     <h1>Ohodnoťe Nás</h1>
     <form action="{{ url_for('rate') }}" method="post">
         <label for="username">Username:</label>
