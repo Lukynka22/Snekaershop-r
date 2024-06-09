@@ -51,6 +51,15 @@
 
   document.getElementById('start-game').addEventListener('click', startGame);
 
+
+   function startGame() {
+    console.log('Start game button clicked!');
+    gameContainer.style.display = 'block';
+    shoe.style.display = 'block';
+    generateFabric();
+    document.addEventListener('mousemove', moveShoe);
+  }
+    
 </script>
 </body>
 </html>    
