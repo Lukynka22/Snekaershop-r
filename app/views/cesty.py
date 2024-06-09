@@ -3,6 +3,7 @@ import os
 import json
 
 from flask import jsonify
+app.secret_key = '123456789'
 
 
 @app.route('/rate', methods=['GET', 'POST'])
@@ -35,8 +36,8 @@ def rate():
         with open(ratings_file, 'w') as file:
             json.dump(ratings, file, indent=4)
 
-        flash('Thank you for your feedback!')
-        return render_template('web.html')
+        flash('Děkujeme za hodnocení!')
+        return redirect(url_for('rate'))
     return render_template('rate.html')
 
 
