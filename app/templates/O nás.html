@@ -61,7 +61,13 @@
 <div class="centered-image">
     <img src="https://i.postimg.cc/1379w34h/pl.png" alt="Popis obrázku">
 </div>
-           <p><a href="{{ url_for('rate') }}">Rate Us</a></p>
+
+
+    <button id="theme-toggle">Přepnout režim</button>
+    <script src="{{ url_for('static', filename='dark.js') }}"></script>
+
+    <div class="rate-box">
+        <p><a href="{{ url_for('rate') }}" style="color: white;">Rate Us</a></p>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
@@ -70,12 +76,8 @@
                 {% endfor %}
             </ul>
         {% endif %}
-    {% endwith %}
-
-    <button id="theme-toggle">Přepnout režim</button>
-    <script src="{{ url_for('static', filename='dark.js') }}"></script>
-
-
+    {% endwith %}    
+    </div>
 </body>
 </html>
 
