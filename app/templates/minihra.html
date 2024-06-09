@@ -103,6 +103,17 @@
              rect1.bottom < rect2.top ||
              rect1.top > rect2.bottom);
   }
+
+    setInterval(() => {
+    fabrics.forEach((fabric) => {
+      fabric.style.top = `${parseInt(fabric.style.top) + 5}px`; // move fabric down
+      if (parseInt(fabric.style.top) > gameContainer.offsetHeight) {
+        fabric.remove();
+        fabrics = fabrics.filter((f) => f!== fabric);
+        alert('Game Over! You missed a fabric.'); // add this line
+      }
+    });
+  }, 16); // 16ms = 60fps
     
     
 </script>
