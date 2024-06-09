@@ -71,6 +71,12 @@
     fabrics.push(fabric);
     setTimeout(generateFabric, 1000);
   }
+    
+     function moveShoe(event) {
+    console.log('Moving shoe...');
+    shoe.style.left = `${event.clientX - 50}px`;
+    checkCollision();
+  }
 
     
     
