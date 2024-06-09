@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini hra - Chyť tkanice!</title>
+  <style>
+    #game-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      background-color: #f0f0f0;
+    }
+
+    #shoe {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+   .fabric {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="start-game">Spustit hru!</button>
+  <div id="game-container">
+    <img id="shoe" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/90472e56-a651-4049-ba40-5e4e19feb63e/bota-air-force-1-pro-5dMRL2.png" alt="Shoe">
+    <div id="fabrics-container"></div>
+    <p id="score-display">Score: 0</p>
+  </div>
