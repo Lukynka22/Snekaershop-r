@@ -59,6 +59,20 @@
     generateFabric();
     document.addEventListener('mousemove', moveShoe);
   }
+
+     function generateFabric() {
+    console.log('Generating fabric...');
+    const fabric = document.createElement('img');
+    fabric.src = 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS09bBPDQh3HwMZ_-BkDH8-nHdqv3eEqrV0Z_1Gng79vj5Io5aS5eSg972qo87TP_DWTujk9_qzCAnlqE77k4xafm-ekATEEaYyZ9xH3MX57WpH2Y8aXEVS9UHzQ4fcmCOZvIZXaKWLMg&usqp=CAc';
+    fabric.classList.add('fabric');
+    fabric.style.top = `${Math.random() * -500}px`; // start from top of screen
+    fabric.style.left = `${Math.random() * gameContainer.offsetWidth}px`; // random left position
+    gameContainer.appendChild(fabric);
+    fabrics.push(fabric);
+    setTimeout(generateFabric, 1000);
+  }
+
+    
     
 </script>
 </body>
