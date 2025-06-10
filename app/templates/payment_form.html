@@ -1,18 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platební formulář</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Platební formulář</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px;
+  }
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  .form-container {
+    background-color: #fff;
+    padding: 25px 40px;
+    margin: 0 auto;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  table {
+    width: 100%;
+  }
+  td {
+    padding: 10px;
+    vertical-align: middle;
+  }
+  input[type="text"],
+  input[type="month"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #218838;
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+    padding-top: 5px;
+  }
+  .amount-display {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+  }
+</style>
 </head>
 <body>
-    <h1>Platební formulář</h1>
-    <form action="payment_form" method="post">
-        <label for="credit_card_number">Číslo kreditní karty:</label>
-        <input type="text" id="credit_card_number" name="credit_card_number" required><br><br>
-        <label for="amount">Částka:</label>
-        <input type="number" id="amount" name="amount" min="0" max="10000000" required><br><br>
-        <button type="submit">Zaplatit</button>
-    </form>
+
+<h1>Platební formulář</h1>
+<div class="form-container">
+  <form id="payment-form" action="payment_form" method="post" novalidate>
+    <table>
+      <tr>
+        <td><label for="credit_card_number">Číslo kreditní karty:</label></td>
+        <td>
+          <input type="text" id="credit_card_number" name="credit_card_number" pattern="\d{13,19}" required autocomplete="off" />
+          <div class="error" id="card-error"></div>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="expiry">Datum expirace:</label></td>
+        <td><input type="month" id="expiry" name="expiry" required /></td>
+      </tr>
+      <tr>
+        <td><label for="cvv">CVV:</label></td>
+        <td><input type="text" id="cvv" name="cvv" pattern="\d{3,4}" required autocomplete="off" /></td>
+      </tr>
+      <tr>
+        <td>Částka k úhradě:</td>
+        <td class="amount-display" id="amount-display">Načítám…</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="hidden" id="amount" name="amount" value="" />
+          <button type="submit" id="submit-button">💳 Zaplatit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<script>
+  // Částka z košíku (z bezpečného zdroje, např. backendu)
+  const cartAmount = 56789; // např. 56 789 Kč
+
+  function formatCzechCurrency(value) {
+    return value.toLocaleString('cs-CZ') + ' Kč';
+  }
+
+  // Nastavíme částku do viditelného textu, hidden inputu a tlačítka
+  const amountDisplay = document.getElementById('amount-display');
+  const amountInput = document.getElementById('amount');
+  const submitButton = document.getElementById('submit-button');
+
+  amountDisplay.textContent = formatCzechCurrency(cartAmount);
+  amountInput.value = cartAmount;
+  submitButton.textContent = `💳 Zaplatit ${formatCzechCurrency(cartAmount)}`;
+
+  // Luhnův algoritmus pro validaci čísla karty
+  function isValidCardNumber(number) {
+    const clean = number.replace(/\D/g, '');
+    if (!/^\d{13,19}$/.test(clean)) return false;
+
+    let sum = 0;
+    let shouldDouble = false;
+
+    for (let i = clean.length - 1; i >= 0; i--) {
+      let digit = parseInt(clean.charAt(i), 10);
+
+      if (shouldDouble) {
+        digit *= 2;
+        if (digit > 9) digit -= 9;
+      }
+
+      sum += digit;
+      shouldDouble = !shouldDouble;
+    }
+
+    return sum % 10 === 0;
+  }
+
+  const form = document.getElementById('payment-form');
+  const cardInput = document.getElementById('credit_card_number');
+  const cardError = document.getElementById('card-error');
+
+  form.addEventListener('submit', function(e) {
+    const cardNumber = cardInput.value.trim();
+
+    if (!isValidCardNumber(cardNumber)) {
+      e.preventDefault();
+      cardError.textContent = "Neplatné číslo karty (Zadaná karta vypršela nebo neexistuje).";
+      cardInput.style.borderColor = "red";
+      cardInput.focus();
+    } else {
+      cardError.textContent = "";
+      cardInput.style.borderColor = "";
+    }
+  });
+</script>
+
 </body>
 </html>
